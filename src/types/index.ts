@@ -22,3 +22,10 @@ export interface Reservation {
   userId: string;
   expiresAt: string;
 }
+
+export interface ReserveProps {
+  dropId: string;
+  userId: string;
+  onSuccess: (reservationId: string) => void;
+  onClose: () => void;
+}
