@@ -29,3 +29,8 @@ export interface ReserveProps {
   onSuccess: (reservationId: string) => void;
   onClose: () => void;
 }
+export interface DropProps {
+  drop: Drop;
+  userId: string;
+  refresh: () => void;
+}
