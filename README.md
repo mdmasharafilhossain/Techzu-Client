@@ -1,73 +1,76 @@
-# React + TypeScript + Vite
+# Real-Time High-Traffic Inventory System — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the frontend application for the **Limited Edition Sneaker Drop System**.
 
-Currently, two official plugins are available:
+The UI provides real-time stock updates, reservation countdown timers, and a seamless purchase experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The frontend communicates with the backend API and listens to WebSocket events to synchronize stock across all connected clients instantly.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# Related Links
 
-## Expanding the ESLint configuration
+Frontend Repository:  
+https://github.com/mdmasharafilhossain/Techzu-Client
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Backend Repository:  
+https://github.com/mdmasharafilhossain/Techzu-Server
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Live Application (Backend):  
+https://techzu-server.onrender.com
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Live Application (Frontend):  
+https://techzu-client.vercel.app
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+# 🛠️ Tech Stack
+
+- React
+- TypeScript
+- Tailwind CSS
+- React Hook Form
+- Zod Validation
+- Socket.io Client
+- SweetAlert2
+- Axios
+- Vite
+
+---
+
+# Features
+
+✅ Real-time stock updates across all browser tabs  
+✅ Reserve button with loading and validation feedback  
+✅ 60-second reservation countdown timer  
+✅ Purchase flow with validation  
+✅ Activity feed showing recent buyers  
+✅ User-friendly alerts and notifications  
+✅ Responsive clean UI  
+
+---
+
+# How to Run the Frontend
+
+## 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/mdmasharafilhossain/Techzu-Client
+cd Techzu-Client
 ```
+## 2️⃣ Install Dependencies
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+```bash
+npm install
+```
+## 3️⃣ Environment Variables
+Create a .env.local file:
+```bash
+VITE_API = http://localhost:5000/api
+VITE_BASE_API = http://localhost:5000
+```
+## 4️⃣ Start Development Server
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```

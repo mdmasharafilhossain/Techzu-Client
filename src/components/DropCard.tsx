@@ -15,13 +15,11 @@ export default function DropCard({ drop, userId, refresh }: DropProps) {
 
   const handlePurchase = async () => {
     try {
-      await baseApi.post("/purchases", {
+           await baseApi.post("/purchases", {
         userId,
         reservationId,
       });
-
       Swal.fire("Success", "Purchased successfully", "success");
-
       setReservationId(null);
       refresh();
     } catch (err: any) {
@@ -32,7 +30,6 @@ export default function DropCard({ drop, userId, refresh }: DropProps) {
   return (
     <div className="bg-white shadow rounded-xl p-4">
       <h2 className="text-xl font-bold text-orange-500">{drop?.name}</h2>
-
       <p className="text-gray-600">৳ {drop?.price}</p>
 
       <p className="mt-2 font-semibold">
@@ -40,9 +37,9 @@ export default function DropCard({ drop, userId, refresh }: DropProps) {
       </p>
 
       <div className="mt-3">
-        {reservationId ? (
-          <button
-            onClick={handlePurchase}
+        {reservationId ? (     
+            <button
+         onClick={handlePurchase}
             className="bg-green-600 text-white px-4 py-2 rounded-lg"
           >
             Complete Purchase
