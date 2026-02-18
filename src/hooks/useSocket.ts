@@ -5,7 +5,7 @@ let socket: Socket;
 
 export const useSocket = (onStockUpdate: () => void) => {
   useEffect(() => {
-     socket = io("http://localhost:5000");
+     socket = io(import.meta.env.VITE_BASE_API);
 
      socket.on("stock:update", () => {
       onStockUpdate();

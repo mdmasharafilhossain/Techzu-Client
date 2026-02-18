@@ -9,7 +9,9 @@ import type { Drop } from "../types";
 export default function Dashboard() {
   const [drops, setDrops] = useState<Drop[]>([]);
 
-  const userId = "48df37fd-ddaf-4288-b3c0-4498c8a2d280";
+  // const userId = "48df37fd-ddaf-4288-b3c0-4498c8a2d280";
+  const userId = "0a3072a8-0762-4689-a52a-d74d6259c6b6";
+
 
   const fetchDrops = useCallback(async () => {
     const res = await baseApi.get("/drops");
