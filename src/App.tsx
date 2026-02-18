@@ -8,7 +8,7 @@ function App() {
 
   return (
      <div>
-      <nav className="p-4 bg-black text-white flex gap-4">
+      <nav className="p-4 bg-orange-500 text-white flex gap-4">
         <button onClick={() => setPage("dashboard")}>Dashboard</button>
         <button onClick={() => setPage("create")}>Create Drop</button>
       </nav>

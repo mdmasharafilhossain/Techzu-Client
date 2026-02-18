@@ -43,7 +43,7 @@ export default function CreateDrop() {
   return (
     <div className="min-h-screen flex justify-center items-center bg-gray-100 p-6">
       <div className="bg-white shadow-xl rounded-xl p-6 w-full max-w-lg">
-        <h2 className="text-2xl font-bold mb-6 text-center">
+        <h2 className="text-2xl font-bold mb-6 text-center text-orange-500">
           Create Merch Drop
         </h2>
 
@@ -51,33 +51,38 @@ export default function CreateDrop() {
           
 
           <div>
-            <label className="block text-sm font-medium">Drop Name</label>
+            <label className="block text-sm font-medium">Drop Name*</label>
             <input
               {...register("name")}
               className="w-full border p-2 rounded-lg mt-1"
               placeholder="Air Jordan 1"
+              required
             />
             <p className="text-red-500 text-sm">{errors.name?.message}</p>
           </div>
 
  
           <div>
-            <label className="block text-sm font-medium">Price (৳)</label>
+            <label className="block text-sm font-medium">Price (৳)*</label>
             <input
               type="number"
               {...register("price", { valueAsNumber: true })}
               className="w-full border p-2 rounded-lg mt-1"
+              placeholder="5000"
+              required
             />
             <p className="text-red-500 text-sm">{errors.price?.message}</p>
           </div>
 
 
           <div>
-            <label className="block text-sm font-medium">Total Stock</label>
+            <label className="block text-sm font-medium">Total Stock*</label>
             <input
               type="number"
               {...register("totalStock", { valueAsNumber: true })}
               className="w-full border p-2 rounded-lg mt-1"
+              placeholder="100"
+              required
             />
             <p className="text-red-500 text-sm">{errors.totalStock?.message}</p>
           </div>
@@ -89,13 +94,14 @@ export default function CreateDrop() {
               type="datetime-local"
               {...register("startsAt")}
               className="w-full border p-2 rounded-lg mt-1"
+              required
             />
             <p className="text-red-500 text-sm">{errors.startsAt?.message}</p>
           </div>
 
           <button
             disabled={isSubmitting}
-            className="w-full bg-black text-white py-2 rounded-lg hover:bg-gray-800 transition"
+            className="w-full bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition"
           >
             {isSubmitting ? "Creating..." : "Create Drop"}
           </button>

@@ -31,7 +31,7 @@ export default function DropCard({ drop, userId, refresh }: DropProps) {
 
   return (
     <div className="bg-white shadow rounded-xl p-4">
-      <h2 className="text-xl font-bold">{drop?.name}</h2>
+      <h2 className="text-xl font-bold text-orange-500">{drop?.name}</h2>
 
       <p className="text-gray-600">৳ {drop?.price}</p>
 
@@ -51,7 +51,7 @@ export default function DropCard({ drop, userId, refresh }: DropProps) {
           <button
             disabled={drop.availableStock === 0}
             onClick={() => setModal(true)}
-            className="bg-black text-white px-4 py-2 rounded-lg disabled:bg-gray-400"
+            className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg disabled:bg-gray-400"
           >
             Reserve
           </button>
