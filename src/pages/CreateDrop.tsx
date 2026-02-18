@@ -7,12 +7,7 @@ import dayjs from "dayjs";
 import { baseApi } from "../api/baseApi";
 
 export default function CreateDrop() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting },
-    reset,
-  } = useForm<DropInput>({
+  const { register, handleSubmit, formState: { errors, isSubmitting },reset,}=useForm<DropInput>({
     resolver: zodResolver(dropSchema),
   });
 
@@ -67,7 +62,7 @@ export default function CreateDrop() {
 
  
           <div>
-            <label className="block text-sm font-medium">Price ($)</label>
+            <label className="block text-sm font-medium">Price (৳)</label>
             <input
               type="number"
               {...register("price", { valueAsNumber: true })}

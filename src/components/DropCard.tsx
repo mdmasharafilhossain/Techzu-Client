@@ -31,12 +31,12 @@ export default function DropCard({ drop, userId, refresh }: DropProps) {
 
   return (
     <div className="bg-white shadow rounded-xl p-4">
-      <h2 className="text-xl font-bold">{drop.name}</h2>
+      <h2 className="text-xl font-bold">{drop?.name}</h2>
 
-      <p className="text-gray-600">${drop.price}</p>
+      <p className="text-gray-600">৳ {drop?.price}</p>
 
       <p className="mt-2 font-semibold">
-        Stock: <span className="text-green-600">{drop.availableStock}</span>
+        Stock: <span className="text-green-600">{drop?.availableStock}</span>
       </p>
 
       <div className="mt-3">
